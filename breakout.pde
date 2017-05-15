@@ -1448,8 +1448,6 @@ void DeleteBallAll()
 
 int JudgeObjectToFrame(Ball o, Frame f)
 {
-  PVector v1=new PVector(1.0, 0.0);
-  PVector v2=new PVector(0.0, 1.0);
   int code=DecideHitSide(o);
       Segment s;
   if (code%CAN_BE_HIT_AT_RIGHT_SIDE==0) {

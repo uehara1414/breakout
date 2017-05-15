@@ -258,13 +258,12 @@ class Ball
     int speed;
 
   Ball(float x,float y)
-  {
-        p=new PVector(bar.p.x+frame.left,frame.ceiling+bar.p.y-bar.h-r);
-    v=new PVector(0, 0);
-            a=new PVector(0, 0.015);
-
-                r=5;
-        endurance=1;
+  {  
+    p = new PVector(bar.p.x+frame.left,frame.ceiling+bar.p.y-bar.h-r);
+    v = new PVector(0, 0);
+    a = new PVector(0, 0.015);
+    r = 5;
+    endurance = 1;
   }
 
     void Draw()

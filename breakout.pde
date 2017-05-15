@@ -1,6 +1,3 @@
-
-
-
 int ball_top;
 int block_top;
 int effect_top;

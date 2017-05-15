@@ -1961,34 +1961,35 @@ void InitEffects()
 int phase_game_initialize=0;
 boolean GameInitialize()
 {
-  switch(phase_game_initialize){
-  case 0:
-        break_count=0;
-        mainroutine_count=0;
-        color_manager=new ColorManager();
-    frame=new Frame(10, 10, width-190, height-50);
-    bar=new Bar();
-    im=new InputManager();
-    InitBalls();
-    InitBlocks();
-    InitEffects();
-        SetBlockX();
-        background=color(255);    
-    phase_game_initialize++;
-    break;
-  case 1:
-        CreateEffect(0,0,EFFECT_TYPE_WORDEDSHAPEBLOCKS,WORD_ClicktoStart);
-    phase_game_initialize++;
-    break;
-  case 2:
-        if(mousePressed){
-      CreateBall(bar.p.x+frame.left,frame.ceiling+bar.p.y-bar.h-balls[0].r,BALL_TYPE_SLOWBALL);
-      CreateEffect(0,0,EFFECT_TYPE_BROKENBLOCK_CURTAIN,0);
-            phase_game_initialize=0;
-      return true;
-    }
-        Update();
-    Draw();
+  switch(phase_game_initialize)
+  {
+    case 0:
+      break_count=0;
+      mainroutine_count=0;
+      color_manager=new ColorManager();
+      frame=new Frame(10, 10, width-190, height-50);
+      bar=new Bar();
+      im=new InputManager();
+      InitBalls();
+      InitBlocks();
+      InitEffects();
+      SetBlockX();
+      background=color(255);    
+      phase_game_initialize++;
+      break;
+    case 1:
+      CreateEffect(0,0,EFFECT_TYPE_WORDEDSHAPEBLOCKS,WORD_ClicktoStart);
+      phase_game_initialize++;
+      break;
+    case 2:
+      if(mousePressed){
+        CreateBall(bar.p.x+frame.left,frame.ceiling+bar.p.y-bar.h-balls[0].r,BALL_TYPE_SLOWBALL);
+        CreateEffect(0,0,EFFECT_TYPE_BROKENBLOCK_CURTAIN,0);
+        phase_game_initialize=0;
+        return true;
+      }
+      Update();
+      Draw();
   }
   return false;
 }
